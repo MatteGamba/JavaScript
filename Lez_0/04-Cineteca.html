@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineteca</title>
+</head>
+<body>
+    
+
+    <h1 id="saluto"></h1>
+
+    <div>
+        <ul id="films"></ul>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+        //Recuper l'elemento HTML per il benvenuto
+        var elSaluto = document.getElementById('saluto');
+        console.log(elSaluto);
+        //inietto delle stringhe nell'elemento saluto
+        var nomeUtente = prompt("Ciao utente, digita il tuo nome...");
+        elSaluto.innerHTML = "Ciao " + nomeUtente;
+
+        var films = [
+            "Il silenzio degli innocenti",
+            "Io Robot",
+            "C'era una volta in America",
+            "Taxi Driver",
+            "Giovannona Coscialunga",
+            "Tre Uomini e una gamba",
+            "Cenerentola"
+        ];
+
+        var elFilms = document.getElementById("films");
+
+        for( var i = 0; i < films.length; i++){
+            elFilms.innerHTML += "<li>" + films[i] + "</li>";
+        }
+
+        
+
+    </script>
+</body>
+</html>

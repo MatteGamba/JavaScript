@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Scontrino Spesa</h1>
+
+    <ul id="lista">
+        <!-- <li>Pane - 1.50€</li>
+        <li>Olio - 7.50€</li>
+        <li>Carne- 11.20</li> -->
+    </ul>
+
+    <div id="totale"></div>
+
+    <script type="text/javascript">
+        var items = ["Pane", "Olio", "Carne", "Birra", "Pasta"];
+        var prezzi = [1.50, 7.50, 11.20, 5.30, 0.80];
+
+        var elLista = document.getElementById("lista");
+
+        var listaSpesa = "";
+
+        var totale = 0;
+
+        for (var i = 0; i < items.length; i++) {
+            listaSpesa += "<li style=color:red;>" + items[i] + " - " + prezzi[i] + " € </li>";
+            totale += prezzi[i];
+        }
+
+        var elTotale = document.getElementById("totale");
+
+
+        elLista.innerHTML = listaSpesa;
+        elTotale.innerHTML = "<h2> Totale: " + totale + " € </h2>";
+    </script>
+</body>
+
+</html>
