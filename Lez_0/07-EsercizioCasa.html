@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il mio carrello</title>
+</head>
+<body>
+    
+<style>
+
+    body{
+        background-color: rgba(54, 54, 54, 0.205);
+        text-align: center;
+    }
+
+    h4{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: rgb(189, 171, 113);
+    }
+
+    #benvenuto{
+        color: rgb(21, 19, 136);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 40px;
+        letter-spacing: 5px;
+    }
+
+    #carrello{
+        margin-top: 50px;
+        color: rgb(189, 171, 113); 
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #listaOgg{
+        border-top: 2px solid rgb(189, 171, 113);
+        border-bottom: 2px solid rgb(189, 171, 113);
+        width: 150px;
+        padding: 30px 20px 30px 50px;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    #grandTotal{
+        margin-top: 20px;
+        font-size: 25px;
+    }
+
+    #listaOgg li{
+        text-align: left;
+    }
+
+</style>
+
+    <!-- Creare una pagina di resoconto per acquisti online
+    Riepilogo oggetti acquistati,prezzo per ogni voce
+    totale senza iva, totale con iva, prezzo spedizione,
+    Grand Totale(totale con iva + spedizione).
+    Quando accedo alla pagina viene richiesto il nome utente e
+    stampato un saluto "ciao, Tizio". -->
+
+    <h1 id="benvenuto"></h1>
+
+    <h2 id="carrello"></h2>
+
+    <ol id="listaOgg"></ol>
+
+    <div id="resOgg">
+        <div id="totale"></div>
+        <div id="totaleIvato"></div>
+        <div id="spedizione"></div>
+        <div id="grandTotal"></div>
+    </div>
+
+    <script src="js/07-script.js"></script>
+</body>
+</html>
