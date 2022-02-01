@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+
+        <input type="text" id="nome" placeholder="nome"><br>
+        <input type="text" id="cognome" placeholder="cognome">
+        <input type="button" value="Prendi" onclick="prendi()">
+        <input type="button" value="Costruisci" onclick="costruisci()">
+        
+    </form>
+    <div id="info"></div>
+    <div id="demo"></div>
+    
+    <script>
+
+        //obj per il pulsante prendi
+
+        var info = document.getElementById("info");
+        var demo = document.getElementById("demo");
+
+        function prendi(){
+            var obj = new Object();
+            obj.nome = document.getElementById("nome").value;
+            obj.cognome = document.getElementById("cognome").value;
+            info.innerHTML = obj.nome + " " + obj.cognome;
+            console.log(obj);
+        }
+
+        //obj per il pulsante costruisci, utilizzando un costruttore
+        function utente2(nome, cognome){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.toString = function(){
+                //return "Mi chiamo: " + this.nome + " " + this.cognome;
+                return `ciao ${this.nome} ${this.cognome}`;//stile JQUERY 
+            }
+        }
+
+        function costruisci(){
+            var nome = document.getElementById("nome").value;
+            var cognome = document.getElementById("cognome").value;
+            var utente = new utente2(nome, cognome);
+            demo.innerHTML = utente.toString();
+            // prima di inviare il mio utente a java lo traformo in una stringa
+            var utenteSTR = JSON.stringify(utente);
+
+            //send(utenteSTR);
+            console.log(utenteSTR);
+
+        }
+         
+
+    </script>
+
+</body>
+</html>
