@@ -63,3 +63,19 @@ function aggiungi(){
         parola.innerHTML = "Ja" + par;
     
 }
+
+//ES 7
+function trova(){
+    var goal = 100;
+    var n1 = document.getElementById("num1").value;
+    var n2 = document.getElementById("num2").value;
+    var tro = document.getElementById("trova");
+    if(n1 == n2){
+        tro.innerHTML = "Numeri uguali: inserisci numeri diversi tra loro"
+    }else if(Math.abs(n1 - goal) < Math.abs(n2 - goal)){
+        tro.innerHTML = n1 + " è piu vicino a 100";
+    } else {
+        tro.innerHTML = n2 + " è piu vicino a 100";
+    }
+    
+}
