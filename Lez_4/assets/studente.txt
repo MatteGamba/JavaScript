@@ -1,0 +1,28 @@
+[
+
+{
+    "nome":"Pippo",
+    "cognome":"Rossi",
+    "materie":["Java", "Javascript", "Angular"],
+    "compagniClasse":["Gianni", "Anna", "Giulia", "Silvio"]
+},
+{
+    "nome":"Carlo",
+    "cognome":"Sassi",
+    "materie":["Java", "Javascript", "Angular"],
+    "compagniClasse":["Gianni", "Anna", "Giulia", "Silvio"]
+},
+{
+    "nome":"Daniele",
+    "cognome":"Cricco",
+    "materie":["Java", "Javascript", "Angular"],
+    "compagniClasse":["Gianni", "Anna", "Giulia", "Silvio"]
+},
+{
+    "nome":"Simone",
+    "cognome":"Altari",
+    "materie":["Java", "Javascript", "Angular"],
+    "compagniClasse":["Gianni", "Anna", "Giulia", "Silvio"]
+}
+
+]

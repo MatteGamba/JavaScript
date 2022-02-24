@@ -5,7 +5,7 @@ function scadenza(oggi){
     settDaOggi = new Date(oggi.getTime() + (7 * 24 * 60 * 60 * 1000));
 
     nomeGiorni = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
-    nomeMesi = ["G", "F", "M", "A", "M", "G", "L", "A", "S", "O", "N", "D"];
+    nomeMesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 
     day = nomeGiorni[settDaOggi.getDay()];
     date = settDaOggi.getDate();

@@ -15,6 +15,17 @@
         text-align: center;
     }
 
+    #sopra{
+        background-image: url(/Lez_0/img/1.jpg);
+        background-size: cover;
+        text-align: center;
+        margin: auto;
+        height: 170px;
+        width: 70%;
+        border: 0px solid;
+        border-radius: 10px;
+    }
+
     h4{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         margin-top: 10px;
@@ -63,9 +74,18 @@
     Quando accedo alla pagina viene richiesto il nome utente e
     stampato un saluto "ciao, Tizio". -->
 
+    <div id="sopra"></div>    
+
     <h1 id="benvenuto"></h1>
 
     <h2 id="carrello"></h2>
+
+    <label for="ogg">Item</label>
+    <input type="text" id="ogg">
+    <label for="pre">Prezzo</label>
+    <input type="text" id="pre">
+    <br><br>    
+    <input type="button" value="Carica" onclick="registra()">
 
     <ol id="listaOgg"></ol>
 
