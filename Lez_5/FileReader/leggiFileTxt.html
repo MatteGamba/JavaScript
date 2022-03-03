@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+
+    <input type="file" name="mioFile" id="mioFile" accept="text/plain"> <br>
+    <textarea name="contenuto" id="contenuto" cols="60" rows="15"></textarea>
+
+    <input type="button" id="btnSave" value="Salva">
+    <br>
+    <input type="file" accept="image/*" id="btnFile">
+    <br>
+    <img id="output">
+    <br>
+
+    <h2>Drag and Drop</h2>
+
+    <div id="div1" ondrop="drop(event)" ondragover="autorizzaDrop(event)">
+        <img src="img/avatar-4a4f2e49d2fa6e5feda9d14e379e548f.jpg" alt="" id="drag1" draggable="true" ondragstart="drag(event)">
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="autorizzaDrop(event)">
+
+    </div>
+
+    <script src="FileReader/js/script.js"></script>
+</body>
+</html>

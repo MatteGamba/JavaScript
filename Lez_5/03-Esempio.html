@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+    // var utente = {
+    //     nome : "Matteo",
+    //     cognome : "Gamba",
+    //     Token : 1234
+    // };
+
+    // if(Modernizr.localstorage){
+    //     localStorage.setItem("nomeUser", utente.nome);
+    //     localStorage.setItem("cognomeUser", utente.cognome);
+    //     localStorage.setItem("token", utente.Token);
+    // }
+    
+    // if(localStorage.getItem("token") == 1235){
+    //     document.write("Utente Connesso")
+    // }else{
+    //     document.write("Utente non Connesso");
+    // }
+
+
+    var utenti = [
+        {
+            nome: "Pippo",
+            cognome: "Rossi",
+            id: 1
+        },
+        {
+            nome: "Anna",
+            cognome: "Bianchi",
+            id: 2
+        },
+        {
+            nome: "Paola",
+            cognome: "Verdi",
+            id: 3
+        }
+    ]
+
+    if(Modernizr.localstorage){
+        for(var i = 0; i < utenti.length; i++){
+            localStorage.setItem("utente"+i, JSON.stringify(utenti[i]));
+        }
+    }
+
+    setTimeout(() => {
+        localStorage.clear()
+    }, 10000);
+    
+</script>
+</body>
+</html>
