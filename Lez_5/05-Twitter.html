@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/twitter.css">
     <title>Document</title>
 </head>
 <body>
     
-    <h1>Twitter <img src="img/twitter.png" width="40em"></h1>
-    <p>Scrivi il tuo tweet con 280 caratteri</p><!--I caratteri devono scorrere live. Quando arrivo a 0 devo poter bloccare la possibilità di continuare a scrivere-->
-    <textarea id="messaggio" cols="60" rows="10"></textarea>
-
-    <div id="caratteriResidui">Hai a disposizione: 280 caratteri</div>
-    <br>
-    <button id="btn"> Salva Tweet </button> <!-- Questo pulsante scrive il tweet nel div sottostante e permette di salvare un file -->
+    <div class="cont">
+        
+        <h1>TWITTER</h1>
+        <img src="img/twitter.png">
+        
+        <p>Condividi i tuoi pensieri</p><!--I caratteri devono scorrere live. Quando arrivo a 0 devo poter bloccare la possibilità di continuare a scrivere-->
+        <textarea id="messaggio" cols="60" rows="7"></textarea>
     
+        <div id="caratteriResidui">Hai a disposizione: 280 caratteri</div>
+        <br>
+        <button id="btn"> SALVA E CONDIVIDI </button> <!-- Questo pulsante scrive il tweet nel div sottostante e permette di salvare un file -->
+          
+    </div>
     <!-- Questo viene mostrato solo quando lancio il tweet. Qui posso modificare il codice HTML-->
-    <h2>Il tuo tweet</h2>
+    <h2 id="tweet">Il Tuo tweet</h2>
     <div id="feed"></div>
 
 
