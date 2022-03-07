@@ -24,14 +24,14 @@ messaggio.addEventListener("keyup", cancella, false);
 
 function salva(){
     // tweet.innerHTML = "Il tuo tweet";
+    
     var mex = messaggio.value;
     feed.innerHTML = "";
-    var nuovo = document.createElement("p");
+    var nuovo = document.createElement("span");
     feed.appendChild(nuovo);
     nuovo.setAttribute("id", "pi");
     secondoP = document.querySelector("#pi");
     secondoP.setAttribute("class", "secondo");
-    
     if(messaggio.value.length > 0){
         nuovo.innerHTML = messaggio.value;
 
@@ -67,7 +67,7 @@ function salva(){
         salvaFile();
 
     }else{
-        nuovo.innerHTML = "!!! Dai raccontaci qualcosa !!!";
+        nuovo.innerHTML = "&#128549 NON VUOI CONDIVIDERE NIENTE??! &#128549";
     }
     messaggio.value = "";
     res.innerHTML = "Hai a disposizione: " + tot + " caratteri";
