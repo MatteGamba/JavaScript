@@ -3,28 +3,34 @@ var messaggio = document.querySelector("#messaggio");
 var btn = document.querySelector("#btn");
 var tweet = document.querySelector("#tweet");
 var feed = document.querySelector("#feed");
+var map = document.querySelector("#map")
 const tot = 280;
 
 res.setAttribute("class", "cara");
 messaggio.setAttribute("class", "area");
 btn.setAttribute("class", "botto");
 tweet.setAttribute("class", "tuo");
-feed.setAttribute("class", "back")
-
+feed.setAttribute("class", "back");
 var primoP = document.querySelector("p");
 primoP.setAttribute("class", "scrivi");
+// messaggio.setAttribute("maxlength", 280);
 
 function cancella(){
     var mex = messaggio.value.length;
+    if(mex > tot){
+        messaggio.value = messaggio.value.substring(0, tot);
+        mex = tot;
+    }
     res.innerHTML = "Hai a disposizione: " + (tot - mex) + " caratteri";
-    messaggio.setAttribute("maxlength", 280);
 }
 
 messaggio.addEventListener("keyup", cancella, false);
 
+
+
 function salva(){
     // tweet.innerHTML = "Il tuo tweet";
-    
+    var msg = "";
     var mex = messaggio.value;
     feed.innerHTML = "";
     var nuovo = document.createElement("span");
@@ -66,6 +72,25 @@ function salva(){
         };
         salvaFile();
 
+        navigator.geolocation.getCurrentPosition(success, fail);
+
+        var longitudine = 0;
+        var latitudine = 0;
+
+        function success(posizione){
+
+            msg += '<h4> Longitudine: ' +  posizione.coords.longitude + '</h4> <br>'
+            msg += '<h4> Latidudine: ' +  posizione.coords.latitude  + '</h4> <br>'
+            map.innerHTML = msg;
+            latitudine = posizione.coords.latitude;
+            longitudine = posizione.coords.longitude;
+        }
+        
+        function fail(){
+        msg = "non siamo stati in grado di geolocalizzarti"
+        map.innerHTML = msg;
+    }
+
     }else{
         nuovo.innerHTML = "&#128549 NON VUOI CONDIVIDERE NIENTE??! &#128549";
     }
@@ -74,3 +99,4 @@ function salva(){
 }
 
 btn.addEventListener("click", salva, false);
+messaggio.addEventListener("keyup", premi, false)

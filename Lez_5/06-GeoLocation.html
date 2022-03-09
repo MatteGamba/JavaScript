@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 400px;
+        width: 400%;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+</head>
+<body>
+    
+<h1>Dove ti trovi</h1>
+
+<div id="loc">Attendi qualche secondo, ti stiamo geolocalizzando...</div>
+
+<h2>Dove mi trovo</h2>
+<div id="map" class="map"></div>
+
+<script>
+    var loc = document.querySelector('#loc');
+    
+    var msg = "";
+    
+    navigator.geolocation.getCurrentPosition(success, fail);
+    
+    var longitudine = 0;
+    var latitudine = 0;
+
+    function success(posizione){
+
+        msg += '<h4> Longitudine: ' +  posizione.coords.longitude + '</h4>'
+        msg += '<h4> Latidudine: ' +  posizione.coords.latitude  + '</h4>'
+        loc.innerHTML = msg;
+        latitudine = posizione.coords.latitude;
+        longitudine = posizione.coords.longitude;
+
+        var map = new ol.Map({
+          target: 'map',
+          layers: [
+            new ol.layer.Tile({
+              source: new ol.source.OSM()
+            })
+          ],
+          view: new ol.View({
+            center: ol.proj.fromLonLat([longitudine, latitudine]),
+            zoom: 20
+          })
+        });
+    }
+    
+    function fail(){
+    msg = "non siamo stati in grado di geolocalizzarti"
+    loc.innerHTML = msg;
+}
+
+</script>
+</body>
+</html>
