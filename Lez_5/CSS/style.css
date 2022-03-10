@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .dimDiv{
     width: 200px;
     height: 200px;
@@ -11,5 +15,13 @@
 }
 
 .danger{
-    color: red;
+    color: rgb(255, 0, 0);
+}
+
+ul li.barrato{
+    text-decoration: line-through;
+}
+
+#lista li span{
+    margin-left: 10px;
 }
