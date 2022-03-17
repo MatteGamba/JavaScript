@@ -1,0 +1,8 @@
+{
+    "utenti" : [
+        {"id" : 1, "name" : "Matteo", "phone" : "3493651236"}
+    ],
+    "profili": [
+        "base", "admin", "superUser"
+    ]
+}
