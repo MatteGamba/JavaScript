@@ -1,0 +1,60 @@
+*{
+    margin: auto;
+}
+
+body{
+    margin: 100px;
+    background-color: #F5F8FA;
+}
+
+#logIn{
+    border: 0px solid rgb(80, 80, 80);
+    border-radius: 20px;
+    background-color: #E1E8ED;
+    width: 300px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgb(37, 37, 37);
+}
+
+#logIn h1{
+    margin-bottom: 20px;
+}
+
+#logIn input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#sub{
+    background-color: rgb(255, 79, 79);
+    width: 100px;
+    height: 30px;
+    border: 0px solid black;
+    border-radius: 10px;
+}
+
+#mex{
+    color: red;
+}
+
+.titolo{
+    text-align: center;
+}
+
+.inserimento{
+    padding: 50px;
+    width: 30%;
+    border: 1px solid black;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.inserimento input{
+    margin: 20px;
+}
+
+.card{
+    display: inline-block;
+    margin: 0;
+}

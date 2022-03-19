@@ -1,15 +1,21 @@
 $(function(){
-
     $("#btn").click(function(){
-
         var $item = $("#item").val();
-        var $demo = $("#demo");
-        $demo.append("<li>" + $item + "<span> X </span>" + "</li>");
+        $("#demo").append("<li>" + $item + "<span> X </span>" + "</li>");
         $("#item").val("");
-        $("span").on("click", function(){
-            $(this).parent().remove()
-            
-        })
     })
     
+    $("#item").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#btn").click();
+        }
+    })
+
+    $(document).on("click", "span", function(){
+        $(this).parent().remove() 
+    })
+
+    $(document).on("click", "li", function(){
+        $(this).toggleClass("barrato")
+    })
 })
