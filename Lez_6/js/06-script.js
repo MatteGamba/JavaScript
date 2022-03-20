@@ -1,3 +1,5 @@
+"use strict"
+
 $(function(){
     var utenti = [];
 
@@ -14,48 +16,66 @@ $(function(){
     })
 })
 
-// var URL = "https://reqres.in/api/users?page=1";
-
 $.ajax({
-    url: "https://reqres.in/api/users?page=1",
+    url: "http://localhost:8000/utenti",
     type: "get",
     dataType: "json",
     success: function (data) {
-        var utenti = [];
-        data.data.forEach(element => {
-            utenti.push(element)
-        })
-        for (var i = 0; i < utenti.length; i++) {
+        for (var i = 0; i < data.length; i++) {
         $("#sezione").append(
             "<div class='card' style='width: 18rem;'>" +
-            "<img src='" + utenti[i].avatar + "' class='card-img-top'>" +
+            "<img src='" + data[i].img + "' class='card-img-top'>" +
             "<div class='card-body'>"+
-              "<h5 class='card-title'>" + utenti[i].first_name + "</h5>"+
-              "<p class='card-text'>" + utenti[i].last_name + "</p>"+
-              "<p class='card-mail'>" + utenti[i].email +"</p>"+
+              "<h5 class='card-title'>" + "<span>Nome: </span>" + data[i].name + "</h5>"+
+              "<p class='card-text'>" + "<span>Cognome: </span>" + data[i].surname + "</p>"+
+              "<p class='card-mail'>" + "<span>Email: </span>" + data[i].email +"</p>"+
             "</div>"
         )  
         }
     }
 });
 
-var nuovi = [];
 $("#btn").on("click", function(){
-    nuovi.push(
-        {
-            "nome" : $('#name').val(),
-            "cognome" : $('#surname').val(),
-            "email" : $('#mail').val()
+
+    $.ajax({
+        url: 'http://localhost:8000/utenti',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            name: $("#name").val(),
+            surname: $("#surname").val(),
+            email: $("#mail").val(),
+        },
+        success: function (response){
+            $("#sezione").append(
+                "<div class='card' style='width: 18rem;'>" +
+                "<img src='" + response.img + "' class='card-img-top'>" +
+                "<div class='card-body'>"+
+                  "<h5 class='card-title'>" + response.name + "</h5>"+
+                  "<p class='card-text'>" + response.surname + "</p>"+
+                  "<p class='card-mail'>" + response.email +"</p>"+
+                "</div>"
+            )          
         }
-    )
-    console.log(nuovi);
-    $("#sezione").append(
-        "<div class='card' style='width: 18rem;'>" +
-        "<img src='' class='card-img-top'>" +
-        "<div class='card-body'>"+
-          "<h5 class='card-title'>" + $("#name").val() + "</h5>"+
-          "<p class='card-text'>" + $("#surname").val() + "</p>"+
-          "<p class='card-mail'>" + $("#mail").val() +"</p>"+
-        "</div>"
-    )
+    })
+    $("#name").val("");
+    $("#surname").val("");
+    $("#mail").val("");
 })
+
+// $("#btnFile").on("change", function(){
+//     var reader = new FileReader();
+//     var dataURL = reader.result;
+//     reader.readAsDataURL(dataURL);
+//     console.log(dataURL);
+
+// })
+// function apriFile(event){
+//     var input = event.target;
+//     var reader = new FileReader();
+//     reader.onload = function(){
+//         console.log(reader.result);
+//     }
+//     reader.readAsDataURL(input.files[0]);
+// }
+// btnFile.addEventListener("change", apriFile, false);

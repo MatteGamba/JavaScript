@@ -5,6 +5,7 @@
 body{
     margin: 100px;
     background-color: #F5F8FA;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 #logIn{
@@ -38,23 +39,67 @@ body{
     color: red;
 }
 
+/* ------------------------------------------------------------------ */
+
 .titolo{
     text-align: center;
 }
 
+.titolo h1{
+    color: #4267B2;
+    font-size: 50px;
+    text-shadow:  0px 0px 10px #4267b2a1;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+
 .inserimento{
-    padding: 50px;
+    background-color: #E1E8ED;
+    padding: 40px 30px 60px 20px;
     width: 30%;
     border: 1px solid black;
+    box-shadow: 0px 0px 20px rgb(150, 150, 150);
+    border-radius: 20px;
     margin: 50px auto;
-    text-align: center;
 }
 
 .inserimento input{
+    width: 80%;
     margin: 20px;
+    padding: 7px 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+}
+
+.inserimento input:focus{
+    border: 2px solid #557dce;
+}
+
+.inserimento input[type=file]{
+    border: 0px;
+}
+
+#btn{
+    float: right;
+    background-color: #557dce;
+    border: 0px;
+    border-radius: 50px;
+    padding: 8px 11px 13px 10px;
+    line-height: 1rem;
+    color: rgb(66, 66, 66);
+    font-size: 30px;
+    font-weight: 100;
+    box-shadow: 0px 0px 5px #557dce;
 }
 
 .card{
     display: inline-block;
     margin: 0;
+}
+
+.card span{
+    color: #4267B2;
+    font-weight: 600;
+    margin-right: 10px;
 }
