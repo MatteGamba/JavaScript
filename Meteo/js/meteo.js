@@ -6,7 +6,7 @@ $('.btn').click(function (e) {
     let LI = '';
     let flag = false;
     // e.preventDefault();
-    $("#cards").html("")
+    $(".card").html("")
     $("#meteoAttuale").html("")
     let city = $('#city').val();
     let cityNew = city.charAt(0).toUpperCase() + city.slice(1)
@@ -24,7 +24,10 @@ $('.btn').click(function (e) {
                 let time = element.dt_txt.split(" ")[1];
                 time = time.substring(0,5);
                 // console.log(time);
-                let day = element.dt_txt.split(" ")[0];
+                let days1 = new Date(element.dt * 1000)
+                let days = days1.toLocaleDateString("it", {weekday: "long"})
+                let day = days.charAt(0).toUpperCase() + days.slice(1)
+                console.log(days);
                 let description = element.weather[0].description;
                 let icon = element.weather[0].icon;
                 let tempMin = Math.round(element.main.temp_min-273);
@@ -43,9 +46,9 @@ $('.btn').click(function (e) {
                     <h2>` + cityNew + `, Oggi</h2>
                     <img src="${iconUrl}">
                     <p>Temp. Min: ${tempMin} ||
-                    Umidità: ${humidity}
+                    Umidità: ${humidity} ||
                     Temp. Max: ${tempMax} ||
-                    Pressione: ${pressure} 
+                    Pressione: ${pressure} ||
                     ${main}
                     </p>
                     `;
@@ -70,12 +73,14 @@ $('.btn').click(function (e) {
                 if (counter % 5 == 0) {
                     if(counter != 0)
                         id++;
-                    console.log(`created a new card with counter-> ${counter} id->${id}`);
+                    // console.log(`created a new card with counter-> ${counter} id->${id}`);
                     let card =
                         `
-                    <div class="card" class="col-3">
                     <h2 class="text-center">${day}</h2>
-                    <ul class="list-group list-group-flush" id="${id}"></ul>
+                    <div class="card">
+                    <div class="mini-card" id="${id}">
+                    <div class="col-1"></div>
+                    </div>
                     </div>
                     `
 
@@ -97,7 +102,7 @@ $('.btn').click(function (e) {
                     // </div>
                     
                     // `
-                    $('#cards').append(card);
+                    $('.row').append(card);
                     // $('#'+id).parent().append(`<h2>${day}</h2>`);
                 }
 
@@ -108,10 +113,12 @@ $('.btn').click(function (e) {
                 
                 LI = 
                 `
-                <li class="list-group-item">
-                <p>${time}<span class="desc">${description}</span></p>
-                <p>temp: ${tempMin}°</p><img class="" src="${iconUrl}">
-                </li>
+                <div class="single-card col-lg-2">
+                <p id="orario">${time}</p>
+                <p class="desc">${description}</p>
+                <span id="tempe">Temp: ${tempMin}°</span>
+                <img class="image" src="${iconUrl}">
+                </div>
                 `;
                 $('#'+id).append(LI);
                 
@@ -119,6 +126,12 @@ $('.btn').click(function (e) {
                 cardCounter++;
             });
             
+            COL = 
+            `
+            <div class="col-lg-1"></div>
+            `
+            $(".mini-card").append(COL)
+            $("#today").attr("class", "oggi")
         }
         
     });
