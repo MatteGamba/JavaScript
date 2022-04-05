@@ -1,0 +1,24 @@
+<!-- Estrarre una proprietà -->
+<h1 class="rosso">Ciao dal Component {{title}}</h1>
+
+<!-- Altro modo di estrarre una proprietà -->
+<h2 [innerText] = "title" ></h2>
+
+<p class="star">Classe applicata normalmente</p>
+
+<p [class.star] = "piaciuto">Classe applicata con proprietà</p>
+
+<p [class] = "classiAttuali">Classe applicata con oggetto</p>
+
+<button (click) = "classiAttuali.modStar()"> Cliccami </button>
+
+<br>
+
+<button (click) = "alClick()"> Clicca qui </button>
+
+<p>Ho inserito il primo component</p>
+<app-primo-comp></app-primo-comp>
+
+<aside>
+    <app-secondo-comp></app-secondo-comp>
+</aside>

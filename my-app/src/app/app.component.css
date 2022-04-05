@@ -1,0 +1,11 @@
+.rosso{
+    color: red;
+}
+
+.star{
+    color: gold;
+}
+
+.active{
+    text-decoration: underline;
+}
