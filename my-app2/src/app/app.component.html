@@ -1,0 +1,38 @@
+<!-- <h1>{{title}}</h1> -->
+<div class="container-fluid">
+<!-- Applico una classe attraverso una proprietà -->
+<h1 [innerText] = "title" [class.rosso] = "isLiked"></h1>
+
+<img src="{{imgPath}}" alt="">
+
+<!-- <img [src] = "imgPath" alt=""> -->
+
+<!-- Applico una classe attraverso un oggetto -->
+<p [class] = "piuClassi">Questa è la faccia di Paolo Brosio</p>
+
+<br>
+
+<button class="btn btn-primary" (click) = "onClick()">Prova</button>
+
+<div class="demo">
+    <p>Verra mostrato il nome del nostro personaggio</p>
+    <!-- <app-mio-comp [nome] = "nomeDelComponent" (piaciuto) ="onLike()"></app-mio-comp> -->
+
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <app-hero></app-hero>
+    </div>
+
+    <div class="col-6">
+        <app-heros></app-heros>
+    </div>
+</div>
+
+<h2>Gioco con le classi</h2>
+<app-hero-ng-class></app-hero-ng-class>
+
+<h2>Gioco con Pipes Built-in</h2>
+<app-pipes-prova></app-pipes-prova>
+</div>
